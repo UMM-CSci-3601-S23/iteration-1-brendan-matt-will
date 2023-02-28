@@ -64,6 +64,8 @@ public class Server {
     // List users, filtered using query parameters
     server.get("/api/users", userController::getUsers);
 
+    //server.get("api/foodshelfclient", foodshelfclientController::getMessages);
+
     // Get the specified user
     server.get("/api/users/{id}", userController::getUser);
 
