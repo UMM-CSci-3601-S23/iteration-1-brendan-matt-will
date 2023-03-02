@@ -1,0 +1,51 @@
+<div class="flex-row">
+  <div class="flex-1">
+
+    <mat-card class="search-card">
+      <mat-card-header>
+        <mat-card-title class="client-list-title">Send a message to the food shelf below! / Enviar un mensaje a la estanteria de alimentos </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+
+        <form [formGroup]="addMessageForm" (ngSubmit)="submitForm();">
+          <mat-card class="add-message-card">
+              <mat-card-header>
+                <mat-card-title class="add-message-title">New Message</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <div class="flex-col">
+                  <mat-form-field>
+                    <mat-label>Name</mat-label>
+                    <input matInput formControlName="name"
+                    >
+                    <mat-error *ngIf="formControlHasError('name')" data-test="nameError">
+                      {{getErrorMessage('name')}}
+                    </mat-error>
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <mat-label>Message</mat-label>
+                    <input matInput
+                    formControlName="body" required>
+                    <mat-error *ngIf="formControlHasError('body')" data-test="bodyError">
+                      {{getErrorMessage('body')}}
+                    </mat-error>
+                  </mat-form-field>
+        <div class="flex-row gap-8 flex-wrap">
+          <!-- Examples of filtering on the server -->
+
+          <mat-card-actions align="end">
+            <button
+              mat-button
+              type="button"
+              color="primary"
+              [disabled]="!addMessageForm.valid"
+              type="submit"
+              data-test="confirmAddMessageButton"
+            >
+              ADD MESSAGE
+            </button>
+          </mat-card-actions>
+
+
+

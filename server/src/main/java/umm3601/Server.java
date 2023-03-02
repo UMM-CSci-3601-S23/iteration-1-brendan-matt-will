@@ -14,6 +14,7 @@ import io.javalin.Javalin;
 import io.javalin.plugin.bundled.RouteOverviewPlugin;
 import io.javalin.http.InternalServerErrorResponse;
 import umm3601.user.UserController;
+import umm3601.message.MessageController;
 
 public class Server {
 
@@ -43,6 +44,8 @@ public class Server {
     // Initialize dependencies
     UserController userController = new UserController(database);
 
+    MessageController messageController = new MessageController(database);
+
     Javalin server = Javalin.create(config ->
       config.plugins.register(new RouteOverviewPlugin("/api"))
     );
@@ -64,7 +67,6 @@ public class Server {
     // List users, filtered using query parameters
     server.get("/api/users", userController::getUsers);
 
-    //server.get("api/foodshelfclient", foodshelfclientController::getMessages);
 
     // Get the specified user
     server.get("/api/users/{id}", userController::getUser);
@@ -75,6 +77,10 @@ public class Server {
     // Add new user with the user info being in the JSON body
     // of the HTTP request
     server.post("/api/users", userController::addNewUser);
+
+    server.post("/api/messages", messageController::addNewMessage);
+
+
 
     // This catches any uncaught exceptions thrown in the server
     // code and turns them into a 500 response ("Internal Server
