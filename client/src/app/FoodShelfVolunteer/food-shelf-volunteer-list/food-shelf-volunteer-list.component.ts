@@ -14,13 +14,13 @@ import { MessageService } from '../../FoodShelfClient/foodshelfclient.service';
  * makes the most sense to do the filtering.
  */
 @Component({
-  selector: 'app-food-shelf-list-component',
-  templateUrl: 'food-shelf-client-list.component.html',
-  styleUrls: ['./food-shelf-client-list.component.scss'],
+  selector: 'app-food-shelf-volunteer-component',
+  templateUrl: 'food-shelf-volunteer-list.component.html',
+  styleUrls: ['./food-shelf-volunteer-list.component.scss'],
   providers: []
 })
 
-export class ClientListComponent implements OnInit, OnDestroy  {
+export class VolunteerListComponent implements OnInit, OnDestroy  {
   // These are public so that tests can reference them (.spec.ts)
   public serverFilteredMessages: Message[];
   public filteredMessages: Message[];

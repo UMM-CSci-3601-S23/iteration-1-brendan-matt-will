@@ -31,7 +31,10 @@ import { UserCardComponent } from './users/user-card.component';
 import { UserListComponent } from './users/user-list.component';
 import { UserProfileComponent } from './users/user-profile.component';
 import { AddMessageComponent } from './FoodShelfClient/add-message/add-message.component';
-import {MessageListComponent } from './FoodShelfClient/food-shelf-client-list/food-shelf-client-list.component';
+import {ClientListComponent } from './FoodShelfClient/food-shelf-client-list/food-shelf-client-list.component';
+import {VolunteerListComponent } from './FoodShelfVolunteer/food-shelf-volunteer-list/food-shelf-volunteer-list.component';
+import {DonorListComponent} from './FoodShelfDonor/food-shelf-donor-list/food-shelf-donor-list.component';
+
 
 const MATERIAL_MODULES: any[] = [
   MatButtonModule,
@@ -61,7 +64,10 @@ const MATERIAL_MODULES: any[] = [
     UserProfileComponent,
     AddUserComponent,
     AddMessageComponent,
-    MessageListComponent,
+    ClientListComponent,
+    VolunteerListComponent,
+    DonorListComponent
+
   ],
   imports: [
     BrowserModule,

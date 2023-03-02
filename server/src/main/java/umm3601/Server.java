@@ -18,7 +18,7 @@ import umm3601.message.MessageController;
 
 public class Server {
 
-  private static final int SERVER_PORT = 4567;
+  private static final int SERVER_PORT = 8080;
 
   public static void main(String[] args) {
 
@@ -67,6 +67,7 @@ public class Server {
     // List users, filtered using query parameters
     server.get("/api/users", userController::getUsers);
 
+    server.get("/api/messages", messageController::getMessages);
 
     // Get the specified user
     server.get("/api/users/{id}", userController::getUser);
