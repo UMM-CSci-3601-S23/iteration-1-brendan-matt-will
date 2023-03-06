@@ -70,7 +70,9 @@ public class Server {
 
     // Why isn't json data appearing at /api/messages?
 
-    server.get("/api/messages", messageController::getMessages);
+    server.get("/api/volunteermessages", messageController::getMessages);
+
+    server.get("/api/clientmessages" , messageController::getMessages);
 
     // Get the specified user
     server.get("/api/users/{id}", userController::getUser);
@@ -82,7 +84,9 @@ public class Server {
     // of the HTTP request
     server.post("/api/users", userController::addNewUser);
 
-    server.post("/api/messages", messageController::addNewMessage);
+    server.post("/api/volunteermessages", messageController::addNewMessage);
+
+    server.post("/api/clientmessages", messageController::addNewMessage);
 
 
 

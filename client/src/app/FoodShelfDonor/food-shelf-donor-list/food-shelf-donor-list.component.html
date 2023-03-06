@@ -3,6 +3,45 @@
 
     <mat-card class="search-card">
       <mat-card-header>
-        <mat-card-title class="user-list-title">View messages from volunteers below: </mat-card-title>
+        <mat-card-title class="message-list-title">View messages from volunteers below: </mat-card-title>
       </mat-card-header>
       <mat-card-content>
+
+
+
+
+
+
+
+  <div class="flex-row">
+    <div class="flex-1" *ngIf="serverFilteredMessages; else messagesError" >
+        <mat-card class="'list'">
+          <mat-card-content>
+            <mat-nav-list class="message-nav-list">
+              <h3 mat-subheader>Messages</h3>
+              <a mat-list-item *ngFor="let message of this.filteredMessages" [routerLink]="['/volunteermessages', message._id]" class="message-list-item">
+                <span matListItemTitle mat-line class="message-list-name"> {{message.name}} </span>
+                <span matListItemLine class="message-list-body"> {{message.body}} </span>
+              </a>
+            </mat-nav-list>
+          </mat-card-content>
+        </mat-card>
+
+
+      </div>
+    </div>
+
+    <!-- Maybe this should be a pop-up instead of just a text message? Not sure. -->
+    <ng-template #messagesError>
+      <div class="flex-1" class="message-error">
+        <mat-error>
+          There was a problem loading the messages. Possibly the server is down or perhaps there are network
+          issues.
+        </mat-error>
+        <mat-error>
+          Please wait a bit and try again or start the server.
+        </mat-error>
+      </div>
+    </ng-template>
+
+
