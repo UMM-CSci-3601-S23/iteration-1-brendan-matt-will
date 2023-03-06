@@ -35,6 +35,8 @@ public class MessageController {
 
   static final String NAME_KEY = "name";
   static final String BODY_KEY = "body";
+  static final String ROLE_KEY = "role";
+
 
 
   private final JacksonMongoCollection<Message> messageCollection;

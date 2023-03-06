@@ -4,7 +4,8 @@
       "$oid": "588935f57546a2daea44de7c"
     },
     "name": "Johnny Stewart",
-    "body": "I want beans "
+    "body": "I want beans ",
+    "role": "Client"
 
   },
   {
@@ -12,7 +13,8 @@
       "$oid": "588935f51c55b55c75a84848"
     },
     "name": "Bonnie Stewart",
-    "body": "I don't like tomatoes"
+    "body": "I don't like tomatoes",
+    "role": "Volunteer"
 
   },
   {
@@ -20,7 +22,8 @@
       "$oid": "588935f52787254123f71fed"
     },
     "name": "Billy Bob",
-    "body": "I'm not sure what I want"
+    "body": "I'm not sure what I want",
+    "role": "Volunteer"
 
   },
   {
@@ -28,7 +31,8 @@
       "$oid": "588935f5de613130e931ffd5"
     },
     "name": "Joe Swanson",
-    "body": "Hey Peter I think you're a funny guy"
+    "body": "Hey Peter I think you're a funny guy",
+    "role": "Client"
 
   },
   {
@@ -36,7 +40,8 @@
       "$oid": "588935f55b432bb2ff322160"
     },
     "name": "Morris Man",
-    "body": "Get me some potatoes my guy"
+    "body": "Get me some potatoes my guy",
+    "role": "Volunteer"
 
   }
 ]

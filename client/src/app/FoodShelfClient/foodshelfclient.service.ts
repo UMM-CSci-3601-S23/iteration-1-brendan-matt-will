@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { Message } from '../FoodShelfClient/message';
 import { map } from 'rxjs/operators';
+import { MessageRole } from '../FoodShelfClient/message';
 
 /**
  * Service that provides the interface for getting information
@@ -18,6 +19,7 @@ export class MessageService {
 
   private readonly nameKey = 'name';
   private readonly bodyKey = 'body';
+  private readonly roleKey = 'role';
 
 
   // The private `HttpClient` is *injected* into the service
@@ -47,7 +49,7 @@ export class MessageService {
    *  from the server after a possibly substantial delay (because we're
    *  contacting a remote server over the Internet).
    */
-  getMessages(filters?: { name?: string; body?: string }): Observable<Message[]> {
+  getMessages(filters?: { name?: string; body?: string; role?: MessageRole }): Observable<Message[]> {
     // `HttpParams` is essentially just a map used to hold key-value
     // pairs that are then encoded as "?key1=value1&key2=value2&…" in
     // the URL when we make the call to `.get()` below.

@@ -12,6 +12,21 @@
 </button>
 &nbsp;
 
+
+
+<div class="flex-row gap-8 flex-wrap">
+  <!-- Examples of filtering in Angular -->
+  <mat-form-field class="input-field">
+    <mat-label>Role</mat-label>
+    <mat-select (selectionChange)="getMessagesFromServer()" [(ngModel)]="messageRole" data-test="messageRoleSelect">
+      <mat-option>--</mat-option>
+      <mat-option value="client">Client</mat-option>
+
+
+    </mat-select>
+  </mat-form-field>
+</div>
+
 <div class="flex-row">
   <div class="flex-1">
 

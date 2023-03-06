@@ -3,6 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Subject, takeUntil } from 'rxjs';
 import { Message } from '../../FoodShelfClient/message';
 import { MessageService } from '../../FoodShelfClient/foodshelfclient.service';
+import { MessageRole } from '../../FoodShelfClient/message';
 /**
  * A component that displays a list of users, either as a grid
  * of cards or as a vertical list.
@@ -27,6 +28,7 @@ export class VolunteerListComponent implements OnInit, OnDestroy  {
 
   public messageName: string;
   public messageBody: string;
+  public messageRole: MessageRole;
 
 
   private ngUnsubscribe = new Subject<void>();
@@ -55,7 +57,9 @@ export class VolunteerListComponent implements OnInit, OnDestroy  {
     // and we are specifically watching for role and age whenever the User[] gets updated
     this.messageService.getMessages({
       name: this.messageName,
-      body: this.messageBody
+      body: this.messageBody,
+      role: this.messageRole
+
     }).pipe(
       takeUntil(this.ngUnsubscribe)
     ).subscribe({
