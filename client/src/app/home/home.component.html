@@ -7,8 +7,26 @@
         </mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        Welcome to our website.
+        Welcome to FoodAlert, an online message board for Stevens County Food Shelf
+      </mat-card-content>
+      <mat-card-content>
+        Bienvenido a FoodAlert, un foro de mensajes para el Estantería de Alimentos del Condado de Stevens.
       </mat-card-content>
     </mat-card>
+
+    <button mat-button class="clients-button" matTooltip="Clients" matTooltipPosition="left" routerLink="/foodshelfclient" data-test="account_box">
+      <mat-label >Clients / Clientes</mat-label>
+      <mat-icon class="account_box" aria-label="Client page">account_circle</mat-icon>
+    </button>
+
+    <button mat-button class="clients-button" matTooltip="Clients" matTooltipPosition="left" routerLink="/foodshelfdonor" data-test="account_box">
+      <mat-label >Donors / Donantes</mat-label>
+      <mat-icon class="account_box" aria-label="Donor page">account_circle</mat-icon>
+    </button>
+
+    <button mat-button class="clients-button" matTooltip="Clients" matTooltipPosition="left" routerLink="/foodshelfvolunteer" data-test="account_box">
+      <mat-label >Volunteers / Voluntarios</mat-label>
+      <mat-icon class="account_box" aria-label="Volunteer Page">account_circle</mat-icon>
+    </button>
   </div>
 </div>

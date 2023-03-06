@@ -3,16 +3,19 @@
 
     <mat-card class="search-card">
       <mat-card-header>
-        <mat-card-title class="user-list-title">Send a message to the food shelf!</mat-card-title>
+        <mat-card-title class="user-list-title">Send a message to the food shelf!/ Enviar un mensaje a la estanteria de alimentos</mat-card-title>
       </mat-card-header>
       <mat-card-content>
 
 <button mat-fab class="add-message-fab" matTooltip="Send Message" matTooltipPosition="left" routerLink="/foodshelfvolunteer/new" data-test="addUserButton">
-  <mat-icon class="md-24" aria-label="Add Message">add</mat-icon>
+  <mat-icon class="md-24" aria-label="Add Message">feedback</mat-icon>
 </button>
 &nbsp;
 
-
+      </mat-card-content>
+      </mat-card>
+  </div>
+</div>
 
 
 <div class="flex-row">
@@ -23,7 +26,7 @@
 
         <mat-card class="search-card">
           <mat-card-header>
-            <mat-card-title class="message-list-title">View messages from clients below: </mat-card-title>
+            <mat-card-title class="message-list-title">View messages below! / ¡Vea los mensajes debajo! </mat-card-title>
           </mat-card-header>
           <mat-card-content>
 
@@ -38,7 +41,7 @@
             <mat-card class="'list'">
               <mat-card-content>
                 <mat-nav-list class="message-nav-list">
-                  <h3 mat-subheader>Messages</h3>
+
                   <a mat-list-item *ngFor="let message of this.filteredMessages" [routerLink]="['/messages', message._id]" class="message-list-item">
                     <span matListItemTitle mat-line class="message-list-name"> {{message.name}} </span>
                     <span matListItemLine class="message-list-body"> {{message.body}} </span>
@@ -50,6 +53,8 @@
 
           </div>
         </div>
+          </mat-card-content>
+          </mat-card>
 
         <!-- Maybe this should be a pop-up instead of just a text message? Not sure. -->
         <ng-template #messagesError>
@@ -64,3 +69,7 @@
           </div>
         </ng-template>
 
+        <button mat-button class="home-button" matTooltip="Home" matTooltipPosition="left" routerLink="/" data-test="account_box">
+          <mat-label >Home</mat-label>
+          <mat-icon class="account_box" aria-label="Go home">home</mat-icon>
+        </button>
