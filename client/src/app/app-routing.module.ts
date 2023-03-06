@@ -19,7 +19,7 @@ const routes: Routes = [
   {path: 'users/:id', component: UserProfileComponent, title: 'User Profile'},
   {path: 'foodshelfclient', component: ClientListComponent, title: 'Clients'},
   {path: 'foodshelfclient/new', component: AddMessageComponent, title: 'Add Message'},
-  {path: 'messages', component: ClientListComponent, title: 'Message'},
+  // {path: 'messages', component: ClientListComponent, title: 'Message'},
   {path: 'foodshelfvolunteer', component: VolunteerListComponent, title: 'Volunteers'},
   {path: 'foodshelfvolunteer/new', component: AddMessageComponent, title: 'Add Message'},
   {path: 'foodshelfdonor', component: DonorListComponent, title: 'Donors'}

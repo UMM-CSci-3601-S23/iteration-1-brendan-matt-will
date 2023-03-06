@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { Message } from '../FoodShelfClient/message';
 import { map } from 'rxjs/operators';
-import { MessageRole } from '../FoodShelfClient/message';
+
 
 /**
  * Service that provides the interface for getting information
@@ -19,7 +19,7 @@ export class MessageService {
 
   private readonly nameKey = 'name';
   private readonly bodyKey = 'body';
-  private readonly roleKey = 'role';
+
 
 
   // The private `HttpClient` is *injected* into the service
@@ -49,7 +49,7 @@ export class MessageService {
    *  from the server after a possibly substantial delay (because we're
    *  contacting a remote server over the Internet).
    */
-  getMessages(filters?: { name?: string; body?: string; role?: MessageRole }): Observable<Message[]> {
+  getMessages(filters?: { name?: string; body?: string}): Observable<Message[]> {
     // `HttpParams` is essentially just a map used to hold key-value
     // pairs that are then encoded as "?key1=value1&key2=value2&…" in
     // the URL when we make the call to `.get()` below.
@@ -77,7 +77,7 @@ export class MessageService {
    * @returns an `Observable` containing the resulting user.
    */
 
-  filterMessages(messages: Message[], filters: { name?: string; body?: string }): Message[] { // skipcq: JS-0105
+  filterMessages(messages: Message[], filters: { name?: string; body?: string }): Message[] {
     let filteredMessages = messages;
 
     // Filter by name
@@ -86,7 +86,7 @@ export class MessageService {
       filteredMessages = filteredMessages.filter(user => user.name.toLowerCase().indexOf(filters.name) !== -1);
     }
 
-    // Filter by company
+    // Filter by body
     if (filters.body) {
       filters.body = filters.body.toLowerCase();
       filteredMessages = filteredMessages.filter(user => user.body.toLowerCase().indexOf(filters.body) !== -1);

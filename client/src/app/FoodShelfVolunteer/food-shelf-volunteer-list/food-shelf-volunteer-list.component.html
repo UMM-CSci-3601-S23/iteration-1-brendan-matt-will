@@ -14,18 +14,6 @@
 
 
 
-<div class="flex-row gap-8 flex-wrap">
-  <!-- Examples of filtering in Angular -->
-  <mat-form-field class="input-field">
-    <mat-label>Role</mat-label>
-    <mat-select (selectionChange)="getMessagesFromServer()" [(ngModel)]="messageRole" data-test="messageRoleSelect">
-      <mat-option>--</mat-option>
-      <mat-option value="client">Client</mat-option>
-
-
-    </mat-select>
-  </mat-form-field>
-</div>
 
 <div class="flex-row">
   <div class="flex-1">
@@ -51,7 +39,7 @@
               <mat-card-content>
                 <mat-nav-list class="message-nav-list">
                   <h3 mat-subheader>Messages</h3>
-                  <a mat-list-item *ngFor="let message of this.filteredMessages" [routerLink]="['/volunteermessages', message._id]" class="message-list-item">
+                  <a mat-list-item *ngFor="let message of this.filteredMessages" [routerLink]="['/messages', message._id]" class="message-list-item">
                     <span matListItemTitle mat-line class="message-list-name"> {{message.name}} </span>
                     <span matListItemLine class="message-list-body"> {{message.body}} </span>
                   </a>
