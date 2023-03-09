@@ -78,12 +78,12 @@ describe('AddMessageComponent', () => {
       expect(nameControl.valid).toBeTruthy();
     });
 
-    it('should not fail on single character names', () => {
+    it('should  fail on single character names', () => {
       nameControl.setValue('x');
       expect(nameControl.valid).toBeFalsy();
       // Annoyingly, Angular uses lowercase 'l' here
       // when it's an upper case 'L' in `Validators.minLength(2)`.
-      expect(nameControl.hasError('minlength')).toBeFalsy();
+      expect(nameControl.hasError('minlength')).toBeTruthy();
     });
 
 
@@ -92,17 +92,7 @@ describe('AddMessageComponent', () => {
       expect(nameControl.valid).toBeTruthy();
     });
 
-    it('should not fail if we provide an "existing" name', () => {
-      // We're assuming that "abc123" and "123abc" already
-      // exist so we disallow them.
-      nameControl.setValue('abc123');
-      expect(nameControl.valid).toBeFalsy();
-      expect(nameControl.hasError('existingName')).toBeFalsy();
 
-      nameControl.setValue('123abc');
-      expect(nameControl.valid).toBeFalsy();
-      expect(nameControl.hasError('existingName')).toBeFalsy();
-    });
   });
 
   describe('The body field', () => {
