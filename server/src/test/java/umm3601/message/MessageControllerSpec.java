@@ -170,32 +170,32 @@ class MessageControllerSpec {
     assertEquals(db.getCollection("messages").countDocuments(), messageArrayListCaptor.getValue().size());
   }
 
-//    @Test
-//    void addMesssage() throws IOException {
-//      String testNewMessage = "{"
-//          + "\name\": \"Test Name"
-//          + "\"body\": \"This is a test body that is long enough\","
-//          + "}";
-//      when(ctx.bodyValidator(Message.class))
-//        .then(value -> new BodyValidator<Message>(testNewMessage, Message.class, javalinJackson));
+    @Test
+    void addMesssage() throws IOException {
+      String testNewMessage = "{"
+          + "\"name\": \"Test Name\","
+          + "\"body\": \"This is a test body that is long enough\""
+          + "}";
+      when(ctx.bodyValidator(Message.class))
+        .then(value -> new BodyValidator<Message>(testNewMessage, Message.class, javalinJackson));
 
-//      messageController.addNewMessage(ctx);
-//      verify(ctx).json(mapCaptor.capture());
+      messageController.addNewMessage(ctx);
+      verify(ctx).json(mapCaptor.capture());
 
-//      // Our status should be 201, i.e., our new user was successfully created.
-//      verify(ctx).status(HttpStatus.CREATED);
+      // Our status should be 201, i.e., our new user was successfully created.
+      verify(ctx).status(HttpStatus.CREATED);
 
-//      //Verify that the user was added to the database with the correct ID
-//      Document addedMessage = db.getCollection("messages")
-//        .find(eq("_id", new ObjectId(mapCaptor.getValue().get("id")))).first();
+      //Verify that the user was added to the database with the correct ID
+      Document addedMessage = db.getCollection("messages")
+        .find(eq("_id", new ObjectId(mapCaptor.getValue().get("id")))).first();
 
-//      // Successfully adding the user should return the newly generated, non-empty MongoDB ID for that user.
-//      assertNotEquals("", addedMessage.get("_id"));
+      // Successfully adding the user should return the newly generated, non-empty MongoDB ID for that user.
+      assertNotEquals("", addedMessage.get("_id"));
 
-//      assertEquals("This is a test body", addedMessage.get(MessageController.BODY_KEY));
+      assertEquals("This is a test body that is long enough", addedMessage.get("body"));
 
 
-//  }
+  }
 
 @Test
 void addNullBodyMessage() throws IOException {
