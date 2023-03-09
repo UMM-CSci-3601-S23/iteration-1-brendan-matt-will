@@ -30,7 +30,7 @@ describe('App', () => {
 
     page.getSidenavButton().click();
     page.getNavLink('Donors / Donantes').click();
-    cy.url().should('match', /\/foodshelfdonors$/);
+    cy.url().should('match', /\/foodshelfdonor$/);
     page.getSidenav()
       .should('be.hidden');
 
