@@ -18,7 +18,7 @@ import umm3601.message.MessageController;
 
 public class Server {
 
-  private static final int SERVER_PORT = 2222;
+  private static final int SERVER_PORT = 8080;
 
   public static void main(String[] args) {
 
