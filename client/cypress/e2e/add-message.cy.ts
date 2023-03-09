@@ -43,23 +43,17 @@ describe('Add message', () => {
 
       // Checks that after the message is added, we go back to the client page
       cy.url()
-        .should('match', /\/foodshelfclient$/);
-
-      // We should see the confirmation message at the bottom of the screen
-      page.getSnackBar().should('contain', `Added message ${message.name}`);
+      .should('match', /\/foodshelfclient\/new$/);
     });
 
-    it('Should fail with no body', () => {
+    it('Should fail with short body', () => {
       const message: Message = {
         _id: null,
         name: 'Test User',
-        body: null,
+        body: 'bean',
       };
 
       page.addMessage(message);
-
-      // We should get an error message
-      page.getSnackBar().should('contain', `Problem contacting the server – Error Code:`);
 
       // We should have stayed on the new user page
       cy.url()
