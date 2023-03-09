@@ -19,13 +19,11 @@ describe('FoodShelfClient list', () => {
   it('Should click the send message button', () => {
     page.sendMessageButton().click();
 
-//    cy.url().should(url => expect(url.endsWith('/new')).to.be.true);
+    cy.url().should(url => expect(url.endsWith('/new')).to.be.true);
   });
 
   it('Should click the go home button', () => {
     page.goHomeButton().click();
-
-//    cy.url().should(url => expect(url.endsWith('/http://localhost:35759/')).to.be.true);
   });
 
 });

@@ -20,13 +20,11 @@ describe('FoodShelfVolunteer list', () => {
   it('Should click the send message button', () => {
     page.sendMessageButton().click();
 
-//    cy.url().should(url => expect(url.endsWith('/foodshelfvolunteer/new')).to.be.true);
+    cy.url().should(url => expect(url.endsWith('/foodshelfvolunteer/new')).to.be.true);
   });
 
   it('Should click the go home button', () => {
     page.goHomeButton().click();
-
-//    cy.url().should(url => expect(url.endsWith('/http://localhost:46373/')).to.be.true);
   });
 
 });
