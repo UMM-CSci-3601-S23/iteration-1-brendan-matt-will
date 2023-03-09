@@ -13,7 +13,7 @@
       "$oid": "588935f51c55b55c75a84848"
     },
     "name": "Bonnie Stewart",
-    "body": "I don't like tomatoes"
+    "body": "I want tomatoes"
 
 
   },
@@ -22,15 +22,15 @@
       "$oid": "588935f52787254123f71fed"
     },
     "name": "Billy Bob",
-    "body": "I'm not sure what I want"
+    "body": "My sons birthday is coming up next weekend, can you get some birthday cake?"
 
   },
   {
     "_id": {
       "$oid": "588935f5de613130e931ffd5"
     },
-    "name": "Joe Swanson",
-    "body": "Hey Peter I think you're a funny guy"
+    "name": "Joe Morrison",
+    "body": "My family could use some more pasta"
 
 
   },
@@ -38,8 +38,8 @@
     "_id": {
       "$oid": "588935f55b432bb2ff322160"
     },
-    "name": "Morris Man",
-    "body": "Get me some potatoes my guy"
+    "name": " Anonymous Morris Man",
+    "body": "Get me some potatoes please. That would mean a whole lot to me."
 
 
   }
