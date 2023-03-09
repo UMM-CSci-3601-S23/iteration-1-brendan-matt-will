@@ -72,13 +72,13 @@ public class Server {
 
     server.get("/api/messages", messageController::getMessages);
 
-
-
     // Get the specified user
     server.get("/api/users/{id}", userController::getUser);
 
     // Delete the specified user
     server.delete("/api/users/{id}", userController::deleteUser);
+
+
 
     // Add new user with the user info being in the JSON body
     // of the HTTP request
@@ -86,6 +86,7 @@ public class Server {
 
     server.post("/api/messages", messageController::addNewMessage);
 
+    server.get("/api/messages/{id}", messageController::getMessage);
 
 
 

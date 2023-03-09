@@ -23,6 +23,7 @@ const routes: Routes = [
   {path: 'foodshelfvolunteer', component: VolunteerListComponent, title: 'Volunteers'},
   {path: 'foodshelfvolunteer/new', component: AddMessageComponent, title: 'Add Message'},
   {path: 'foodshelfdonor', component: DonorListComponent, title: 'Donors'}
+ // {path: 'messages/:id', component: MessageProfileComponent, title: 'Message Profile'}
 ];
 
 @NgModule({

@@ -22,7 +22,7 @@ export class AppPage {
     return cy.get(this.sideNav);
   }
 
-  getNavLink(navOption: 'Home' | 'Users') {
+  getNavLink(navOption: 'Home' | 'Clients / Clientes' | 'Donors / Donantes' | 'Volunteers / Voluntarios') {
     return cy.contains(this.sideNavOption, `${navOption}`);
   }
 }
